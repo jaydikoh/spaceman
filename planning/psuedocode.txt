@@ -1,0 +1,28 @@
+* SET a list of possible words (wordList).
+* CHOOSE a random word from the wordList (hiddenWord).
+* CREATE an array to store the guessed letters (guessedLetters).
+*  CREATE a variable to track incorrect guesses (incorrectGuesses = 0).
+* SET maximum allowed incorrect guesses (maxAttempts = 5).
+* INITIALIZE a display word with underscores (displayWord = "_" repeated for each letter in hiddenWord).
+
+* WHILE incorrectGuesses < maxAttempts AND displayWord is not equal to hiddenWord:
+* a  DISPLAY the current displayWord.
+       b. PROMPT the player to guess a letter.
+       c. IF the guessed letter is already in guessedLetters:
+        i. DISPLAY "Letter already guessed. Try a different one."
+        ii. CONTINUE to the next iteration.
+    d. ADD the guessed letter to guessedLetters.
+    e. IF the guessed letter is in hiddenWord:
+        i. REPLACE the underscores in displayWord with the guessed letter at the correct positions.
+        ii. DISPLAY "Correct guess!"
+    f. ELSE:
+        i. INCREMENT incorrectGuesses by 1.
+        ii. DISPLAY "Incorrect guess!"
+    g. DISPLAY the guessed letters so far and the number of attempts remaining.
+
+*  END WHILE
+
+*  IF displayWord equals hiddenWord:
+    a. DISPLAY "Congratulations! You saved the spaceman. The word was [hiddenWord]."
+ELSE:
+    a. DISPLAY "Game over! The spaceman is lost in space. The word was [hiddenWord]."

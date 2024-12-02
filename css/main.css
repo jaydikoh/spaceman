@@ -1,0 +1,152 @@
+body {
+    background-color: rgb(255, 255, 255);
+    /* height: 100vh; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: url("../img/space background.png") center/cover no-repeat;
+    /* overflow: hidden;
+    word-break: keep-all; */
+    /* justify-content: space-between; */
+}  
+
+main {
+display: flex;
+padding: 10px;
+}
+
+#left-container {
+    width: 30%;
+    padding: 10px;
+}
+
+#right-container {
+    width: 70%;
+    padding: 10px;
+}
+
+#game-info {
+    height: 13vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+#game-image {
+    border: 1px solid red;
+    height: 40vh;
+}
+/* #game-info #game-hints {
+    display: flex;
+} */
+
+.keys {
+    display: flex;
+    gap: 1vmin;
+    /* margin-left: 170px; */
+    /* margin-right: 170px; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* width: 300x;
+    height: 200px; */
+}
+
+
+.keyboard-buttons { 
+    width: 55px;
+    height: 45px;
+    background: rgb(0, 136, 255);
+    /* border: 3px solid black; */
+    border-radius: 10px;
+    /* font-weight: 400; */
+    font-size: 30px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.try-again {
+    margin: auto;
+    height: 50px;
+    width: 120px;
+    font-size: larger;
+    /* margin-top: 70px; */
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    /* color: white; */
+    font-size: 70px;
+    font-family: 'Bungee Spice', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    margin: 0;
+}
+
+#keyboard {
+    width: 550px;
+    /* border: 2px solid white; */
+    /* margin: auto; */
+    /* margin-bottom: 100px; */
+
+}
+
+img {
+    width: 380px;
+    height: 450px;
+}
+
+.middle {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.right{
+    margin-right: 50px;
+}
+
+ .word {
+      display: flex;
+      /* flex-direction: row; */
+      /* margin-top: 70px; */
+}
+
+.letter-word {
+    display: flex;
+    width: 45px;
+    height: 40px;
+    background: rgb(0, 136, 255);
+    border: 2px solid black;
+    border-radius: 10px;
+    /* font-weight: 400;
+    font-size: large;  */
+
+}
+
+.gameover {
+    /* text-align: center; */
+    font-size: 40px;
+    /* margin-top: 50px; */
+    color: rgb(255, 140, 0);
+    font-weight: 600;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 130px;
+
+}
+
+button:hover {
+    color: white;
+    background-color: darkgrey;
+  }
+
+  h3 {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 140, 0);
+    font-style: italic;
+    /* line-height: 0; */
+    margin: 0;
+  }
