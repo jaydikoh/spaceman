@@ -36,12 +36,36 @@ playAgainButton.addEventListener('click', init);
 init();
 
 function init() {
-
+    render();
 }
 
-// function render() {
-//   renderGameover()
-// }
+function render() {
+    renderGame();
+}
+
+function renderGame() {
+    guessedLetters = [];               //put the gussed letters in an Array
+    remainingGuesses = 7;
+    selectedWord = words[Math.floor(maths.random() * words.length)]; //math.random pick a index number at random, math.floor makes it a whole number
+    letterContainer.innerHTML = "";                          //Clear existing `letter-word` divs
+    hintEl.textContent = `HINT: ${selectedWord.hint}`;      //selects hint for chosen word
+    livesEl.innerHTML= `Wrong guesses: <b>${}`
+    gameOverEl.style.display = 'none';
+    wordsDisplay()
+}
+
+// this function displays blank spaces representing the div elements
+function wordsDisplay() { 
+    const wordArray = selectedWord.word.split("");         //spliting the array into individual letters
+    wordArray.forEach(() => {                              //iterating through the split word
+        const letterDiv = document.createElement('div');   //each letter creates a new div to hold the letter, this is in order to adapt to the number of letters in the word
+        letterDiv.className = "letter-word";   //Assigns the letter-word class to the newly created div
+        letterDiv.textContent = ""; // Initially display an empty div until player chooses letter
+        letterContainer.appendChild(letterDiv);            //Appends the newly created div to the letterContainer
+    
+    });
+}
+
 
 
 
