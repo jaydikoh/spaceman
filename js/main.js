@@ -12,110 +12,37 @@ const words = [
 
 let selectedWord = {};
 let guessedLetters = [];
-let remainingGuesses = 6;
+let remainingGuesses = 7;
 
 /*----- cached elements  -----*/
 
-const letterContainer = document.querySelector(".word");
-const livesEl = document.getElementById("lives");
-const hintEl = document.querySelector("h3:nth-of-type(2)");
-const keyboardButtons = document.querySelectorAll(".keyboard-buttons");
-const gameOverEl = document.querySelector(".gameover");
-const playAgainButton = document.querySelector(".try-again");
+const letterContainer = document.querySelector(".word"); //selecting divs were guessed word will appear
+const livesEl = document.getElementById("lives");        //selcting h3 that show how many wrong guesses
+const hintEl = document.querySelector("#hint");          //selecting hint element
+const keyboardButtons = document.querySelectorAll(".keyboard-buttons"); //selecting all the buttons on the heyboard
+const gameOverEl = document.querySelector(".gameover");  //selecting the gameover element
+const playAgainButton = document.querySelector(".try-again"); //selecting the play-again button
 
 /*----- event listeners -----*/
-keyboardButtons.forEach((button) => {
-    button.addEventListener("click", handleKeyboardClick);
-});
-playAgainButton.addEventListener("click", init);
+
+
 
 /*----- functions -----*/
 
 // Initialize Game
-function init() {
-    resetGame();
-    selectedWord = words[Math.floor(Math.random() * words.length)];
-    createWordDisplay(); // Generate `letter-word` divs
-    hintEl.textContent = `HINT: ${selectedWord.hint}`;
-    livesEl.innerHTML = `Wrong guesses: <b>${remainingGuesses}</b>`;
-    gameOverEl.style.display = "none";
-}
-
-// Reset the Game State
-function resetGame() {
-    guessedLetters = [];
-    remainingGuesses = 6;
-    letterContainer.innerHTML = ""; // Clear existing `letter-word` divs
-    keyboardButtons.forEach((button) => {
-        button.disabled = false;
-        button.style.backgroundColor = "";
-    });
-}
-
-// Create `letter-word` Divs Based on Word Length
-function createWordDisplay() {
-    const wordArray = selectedWord.word.split("");
-    wordArray.forEach(() => {
-        const letterDiv = document.createElement("div");
-        letterDiv.className = "letter-word";
-        letterDiv.textContent = ""; // Initially display an empty div
-        letterContainer.appendChild(letterDiv);
-    });
-}
-
-// Update the Displayed Letters
-function updateWordDisplay() {
-    const letterDivs = document.querySelectorAll(".letter-word");
-    selectedWord.word.split("").forEach((letter, index) => {
-        if (guessedLetters.includes(letter)) {
-            letterDivs[index].textContent = letter; // Reveal the guessed letter
-        }
-    });
-}
-
-// Check for Game Over or Victory
-function checkGameState() {
-    const letterDivs = document.querySelectorAll(".letter-word");
-    const wordArray = selectedWord.word.split("");
-
-    if (remainingGuesses <= 0) {
-        gameOverEl.style.display = "block";
-        gameOverEl.textContent = `GAME OVER! The word was "${selectedWord.word}".`;
-        disableKeyboard();
-    } else if (wordArray.every((letter, index) => letterDivs[index].textContent === letter)) {
-        gameOverEl.style.display = "block";
-        gameOverEl.textContent = "You Win!";
-        disableKeyboard();
-    }
-}
-
-// Disable All Keyboard Buttons
-function disableKeyboard() {
-    keyboardButtons.forEach((button) => {
-        button.disabled = true;
-    });
-}
-
-// Handle Keyboard Button Click
-function handleKeyboardClick(event) {
-    const guessedLetter = event.target.textContent.toLowerCase();
-    event.target.disabled = true;
-
-    if (selectedWord.word.includes(guessedLetter)) {
-        guessedLetters.push(guessedLetter);
-        updateWordDisplay();
-        event.target.style.backgroundColor = "green"; // Indicate correct guess
-    } else {
-        remainingGuesses--;
-        livesEl.innerHTML = `Wrong guesses: <b>${remainingGuesses}</b>`;
-        event.target.style.backgroundColor = "grey"; // Indicate wrong guess
-    }
-
-    checkGameState();
-}
-
-// Start the Game
 init();
+
+function init() {
+
+}
+
+// function render() {
+//   renderGameover()
+// }
+
+
+
+    
  
  
  
@@ -176,4 +103,5 @@ init();
 // traack game state
 // the number of wrong guesses inside the element who id is lives = 6
 // add event listner to the buttons
+
 
