@@ -25,7 +25,10 @@ const playAgainButton = document.querySelector(".try-again"); //selecting the pl
 
 /*----- event listeners -----*/
 
-
+keyboardButtons.forEach((button) => {
+    button.addEventListener('click', handleClick);
+});
+playAgainButton.addEventListener('click', init);
 
 /*----- functions -----*/
 
