@@ -33,8 +33,9 @@ padding: 10px;
 }
 
 #game-image {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 40vh;
+    
 }
 /* #game-info #game-hints {
     display: flex;
@@ -92,7 +93,7 @@ h1 {
 
 }
 
-img {
+#rocket {
     width: 380px;
     height: 450px;
 }
@@ -121,8 +122,8 @@ img {
     background: rgb(0, 136, 255);
     border: 2px solid black;
     border-radius: 10px;
-    /* font-weight: 600; */
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 23px;
     justify-content: center;
     align-items: center;
     font-style: italic;
@@ -131,13 +132,14 @@ img {
 
 .gameover {
     /* text-align: center; */
-    font-size: 40px;
+    font-size: 30px;
     /* margin-top: 50px; */
     color: rgb(255, 140, 0);
     font-weight: 600;
     font-family: Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
-    margin-left: 130px;
+    /* margin-left: 130px; */
+    width: 60%;
 
 }
 
@@ -149,11 +151,17 @@ button:hover {
   h3 {
     font-family: Georgia, Times, 'Times New Roman', serif;
     color: rgb(255, 140, 0);
-    font-style: italic;
+    /* font-style: italic; */
     /* line-height: 0; */
     margin: 0;
+    font-size: 25px;
   }
 
   #right {
-    align-content: end;
-  }
+    width: 40%
+}
+
+#spaceman {
+    height: 320px;
+    margin-left: 120px;
+}
