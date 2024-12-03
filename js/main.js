@@ -1,4 +1,14 @@
 /*----- constants -----*/
+const images = [
+    "img/spaceman-0.png",
+    "img/spaceman-0.png",
+    "img/spaceman-1.png",
+    "img/spaceman-2.png",
+    "img/spaceman-3.png",
+    "img/spaceman-4.png",
+    "img/spaceman-5.png",
+    "img/spaceman-6.png"
+];
 
 const words = [
   {
@@ -252,6 +262,7 @@ const words = [
 let selectedWord = {};
 let guessedLetters = [];
 let remainingGuesses = 7;
+let keystroke
 
 /*----- cached elements  -----*/
 
@@ -261,6 +272,9 @@ const hintEl = document.querySelector("#hint");          //selecting hint elemen
 const keyboardButtons = document.querySelectorAll(".keyboard-buttons"); //selecting all the buttons on the heyboard
 const gameOverEl = document.querySelector(".gameover");  //selecting the gameover element
 const playAgainButton = document.querySelector(".try-again"); //selecting the play-again button
+const gameImageEl = document.getElementById("game-image"); // Select the game image container
+const manImage = document.getElementById('spaceman')
+const body = document.querySelector('body')
 
 /*----- event listeners -----*/
 
@@ -269,12 +283,19 @@ keyboardButtons.forEach((button) => {
 });
 playAgainButton.addEventListener('click', init);
 
+body.addEventListener('keydown', handleClick);
+
+// window.onload()
+//write a function that handles listening for keyboard events
+//the function should check if your keystroke is one of the 26 letters
+//call the funtion on window.onload
+
 /*----- functions -----*/
 
 // Initialize Game
 
 function init() {
-  renderGame();
+  // renderGame();
   selectedWord = words[Math.floor(Math.random() * words.length)];       //math.random pick a index number at random, math.floor makes it a whole number
   guessedLetters = [];               //put the gussed letters in an Array
   remainingGuesses = 7;              // Hide game-over message
@@ -285,7 +306,8 @@ function init() {
   });
   hintEl.textContent = `HINT: ${selectedWord.hint}`;      //selects hint for chosen word
   livesEl.innerHTML= `Attempts left: <b>${remainingGuesses}`
-  letterContainer.innerHTML = "";                          //Clear existing `letter-word` divs
+  letterContainer.innerHTML = "";                           //Clear existing `letter-word` divs
+  manImage.src="img/spaceman-0.png"
   wordsDisplay();                                       //renedr blank spaces
 }
 
@@ -293,8 +315,8 @@ function init() {
   //     renderGame();
   //   }
   
-  function renderGame() {
-  }
+  // function renderGame() {
+  // }
   
   // this function displays blank spaces representing the div elements
   function wordsDisplay() { 
@@ -341,22 +363,50 @@ function init() {
   }
   
   function handleClick(event) {
-    const guessedLetter = event.target.textContent.toLowerCase();     //Retrieves the text content of the button clicked by the player.
-    event.target.disabled = true;                       //Disables the button so the player cannot select the same letter again.
+    // const guessedLetter = event.target.textContent.toLowerCase();     //Retrieves the text content of the button clicked by the player.
+    let guessedLetter     //Retrieves the text content of the button clicked by the player.
+    if (event.type==='click') {
+      guessedLetter = event.target.textContent.toLowerCase();
+      event.target.disabled = true;                       //Disables the button so the player cannot select the same letter again.
+    } else {
+      guessedLetter = event.key.toLowerCase();
+      keyboardButtons.forEach((button) => {
+        console.log(button.textContent)
+        console.log(keystroke)
+        if (button.textContent.toLowerCase()===guessedLetter) {
+          keystroke = button;
+          keystroke.disabled = true;                       //Disables the button so the player cannot select the same letter again.  
+        }
+      })
+    }
     
     if (selectedWord.word.includes(guessedLetter)) {
       guessedLetters.push(guessedLetter);              // Add correct guess to guessedLetters array
       event.target.style.backgroundColor = "green"; // Indicate correct guess
+      console.log(keystroke)
+      keystroke.style.backgroundColor= "green"
       updateWordDisplay(); 
     } else {
       remainingGuesses--;
       event.target.style.backgroundColor = "grey"; // Indicate wrong guess
+      console.log(keystroke)
+      keystroke.style.backgroundColor= "grey"
+      manImage.src = images[7 - remainingGuesses]
+      // updateGameImage();           // Update the game image
     }
     livesEl.innerHTML = `Attempts left: <b>${remainingGuesses}</b>`;
     getWinner();
   }
   
-  // init();
+
+  // function updateGameImage() {
+  //   const imageIndex = 7 - remainingGuesses; // Determine the image index based on wrong guesses
+  //   if (imageIndex >= 0 && imageIndex < images.length) {
+  //       gameImageEl.style.backgroundImage = `url(${images[imageIndex]})`; // Change background image
+  //   }
+
+
+  
   init();
   
  

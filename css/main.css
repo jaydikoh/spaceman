@@ -68,12 +68,13 @@ padding: 10px;
 }
 
 .try-again {
-    margin: auto;
     height: 50px;
     width: 120px;
     font-size: larger;
     /* margin-top: 70px; */
     border-radius: 8px;
+    margin-left: 130px;
+    margin-top: 10px;
 }
 
 h1 {
@@ -95,7 +96,7 @@ h1 {
 
 #rocket {
     width: 380px;
-    height: 450px;
+    height: 550px;
 }
 
 .middle {
