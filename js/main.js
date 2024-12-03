@@ -273,8 +273,10 @@ const keyboardButtons = document.querySelectorAll(".keyboard-buttons"); //select
 const gameOverEl = document.querySelector(".gameover");  //selecting the gameover element
 const playAgainButton = document.querySelector(".try-again"); //selecting the play-again button
 const gameImageEl = document.getElementById("game-image"); // Select the game image container
-const manImage = document.getElementById('spaceman')
-const body = document.querySelector('body')
+const manImage = document.getElementById('spaceman');
+const body = document.querySelector('body');
+const correctSound = new Audio("sounds/correct.wav"); // Correct guess sound
+const incorrectSound = new Audio("sounds/failed.wav"); // Incorrect guess sound
 
 /*----- event listeners -----*/
 
@@ -367,7 +369,8 @@ function init() {
     let guessedLetter     //Retrieves the text content of the button clicked by the player.
     if (event.type==='click') {
       guessedLetter = event.target.textContent.toLowerCase();
-      event.target.disabled = true;                       //Disables the button so the player cannot select the same letter again.
+      event.target.disabled = true; 
+      keystroke = event.target                      //Disables the button so the player cannot select the same letter again.
     } else {
       guessedLetter = event.key.toLowerCase();
       keyboardButtons.forEach((button) => {
@@ -384,7 +387,8 @@ function init() {
       guessedLetters.push(guessedLetter);              // Add correct guess to guessedLetters array
       event.target.style.backgroundColor = "green"; // Indicate correct guess
       console.log(keystroke)
-      keystroke.style.backgroundColor= "green"
+      keystroke.style.backgroundColor= "green";
+      correctSound.play();
       updateWordDisplay(); 
     } else {
       remainingGuesses--;
@@ -392,6 +396,7 @@ function init() {
       console.log(keystroke)
       keystroke.style.backgroundColor= "grey"
       manImage.src = images[7 - remainingGuesses]
+      incorrectSound.play();
       // updateGameImage();           // Update the game image
     }
     livesEl.innerHTML = `Attempts left: <b>${remainingGuesses}</b>`;
