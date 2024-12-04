@@ -35,7 +35,10 @@ padding: 10px;
 #game-image {
     /* border: 1px solid red; */
     height: 40vh;
-    
+    /* font-size: 80px; */
+    font-family: 'Bungee Spice', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* margin-left: 77px; */
+    /* margin-top: 40px; */
 }
 /* #game-info #game-hints {
     display: flex;
