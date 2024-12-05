@@ -11,9 +11,13 @@ const images = [
     "img/spaceman-4.png",
     "img/spaceman-5.png",
     "img/spaceman-6.png"
-];
-const acceptedKeys = 'abcdefghijklmnopqrstuvwxyz'
-
+  ];
+  const acceptedKeys = 'abcdefghijklmnopqrstuvwxyz'
+  const correctSound = new Audio("sounds/correct.wav"); // Correct guess sound
+  const incorrectSound = new Audio("sounds/failed.wav"); // Incorrect guess sound
+  const winSound = new Audio("sounds/you-win.wav");
+  const loseSound = new Audio("sounds/you-lose.wav")
+  
 /*----- state variables -----*/
 
 let selectedWord = {};
@@ -32,8 +36,6 @@ const playAgainButton = document.querySelector(".try-again"); //selecting the pl
 const gameImageEl = document.getElementById("game-image"); // Select the game image container
 const manImage = document.getElementById('spaceman');
 const body = document.querySelector('body');
-const correctSound = new Audio("sounds/correct.wav"); // Correct guess sound
-const incorrectSound = new Audio("sounds/failed.wav"); // Incorrect guess sound
 const winOrLose = document.querySelector('.checkwinner')
 // const youLose = document.getElementById("game-image");
 
@@ -110,7 +112,8 @@ function init() {
       gameOverEl.textContent = `The word was "${selectedWord.word}"`;
       gameOverEl.style.visibility = 'visible';
       winOrLose.innerText = "YOU LOSE";
-      disableKeyboard();                                              //disables keyboard if game losses
+      disableKeyboard();   
+      loseSound.play()                                           //disables keyboard if game losses
     }
     else if (wordArray.every((letter, index) => letterDivs[index].textContent === letter)) {   //Uses every() to check if all letters in the word (wordArray) match the corresponding letters displayed in the letterDivs.
       gameOverEl.style.display = "block";
@@ -118,6 +121,7 @@ function init() {
       gameOverEl.style.visibility = 'visible';
       winOrLose.innerText = "YOU WIN";
       disableKeyboard(); 
+      winSound.play() 
     }
   }
   
@@ -155,6 +159,7 @@ function init() {
       keystroke.style.backgroundColor= "green";
       correctSound.currentTime = 0;
       correctSound.play();
+      // manImage.visibility = hidden;
       updateWordDisplay(); 
     } else {
       remainingGuesses--;

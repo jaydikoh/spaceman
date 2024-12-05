@@ -145,12 +145,15 @@ h1 {
     font-style: italic;
     /* margin-left: 130px; */
     width: 60%;
+    margin-left: 70px;
+    margin-top: 60px;
 
 }
 
 button:hover {
     color: white;
     background-color: darkgrey;
+    transform: skew(3deg) scale(1.2);
   }
 
   h3 {
@@ -174,3 +177,10 @@ button:hover {
 #lives {
     margin-top: 50px;
 }
+
+.checkwinner {
+    margin-left: 100px;
+    margin-top: 30px;
+    font-size: 70px;
+}
+
