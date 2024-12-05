@@ -8,11 +8,11 @@ const images = [
   "img/spaceman-5.png",
   "img/spaceman-6.png"
 ];
-const acceptedKeys = 'abcdefghijklmnopqrstuvwxyz'
+const acceptedKeys = 'abcdefghijklmnopqrstuvwxyz';
 const correctSound = new Audio("sounds/correct.wav"); // Correct guess sound
 const incorrectSound = new Audio("sounds/failed.wav"); // Incorrect guess sound
 const winSound = new Audio("sounds/you-win.wav");
-const loseSound = new Audio("sounds/you-lose.wav")
+const loseSound = new Audio("sounds/you-lose.wav");
 
 /*----- state variables -----*/
 
@@ -126,12 +126,11 @@ function disableKeyboard() {
 }
 
 function handleClick(event) {
-  // const guessedLetter = event.target.textContent.toLowerCase();     //Retrieves the text content of the button clicked by the player.
-  let guessedLetter     //Retrieves the text content of the button clicked by the player.
-  if (event.type === 'click') {
+  let guessedLetter;                                         //Retrieves the text content of the button clicked by the player.
+  if (event.type === 'click') {                               //Retrieves the text content of the button clicked by the player.
     guessedLetter = event.target.textContent.toLowerCase();
     event.target.disabled = true;
-    keystroke = event.target                      //Disables the button so the player cannot select the same letter again.
+    keystroke = event.target                                  //Disables the button so the player cannot select the same letter again.
   } else {
     guessedLetter = event.key.toLowerCase();
     if (!acceptedKeys.includes(guessedLetter)) return;
