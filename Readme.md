@@ -7,9 +7,9 @@
   ***Spaceman*** is a fun, interactive word-guessing game inspired by hangman but with a space-themed twist! Players guess the letters of a hidden word to save the spaceman. With each incorrect guess, the spaceman edges closer to being stranded in space. Guess correctly to win, or risk losing as the spaceman floats away!
 
   ## Screenshot
-  ![Screenshot 1](https://imgur.com/h5VmYz6 "screenshot")
+  ![Screenshot 1](https://i.imgur.com/m2EIECu.jpeg "screenshot")
 
-  ![Screenshot 2](https://imgur.com/m2EIECu)
+  ![Screenshot 2](https://i.imgur.com/h5VmYz6.jpeg "screenshot")
 
 
 
