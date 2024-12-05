@@ -70,7 +70,8 @@ function init() {
   hintEl.textContent = `HINT: ${selectedWord.hint}`;      //selects hint for chosen word
   livesEl.innerHTML= `Attempts left: <b>${remainingGuesses}`
   letterContainer.innerHTML = "";                           //Clear existing `letter-word` divs
-  manImage.src="img/spaceman-0.png"
+  manImage.src="img/spaceman-0.png";
+  manImage.style.visibility = "visible";
   // gameImageEl.innerHTML = manImage;
   winOrLose.innerText = "";
   body.addEventListener('keydown', handleClick);
@@ -119,12 +120,14 @@ function init() {
       gameOverEl.style.display = "block";
       // gameOverEl.textContent = "You Win!";
       gameOverEl.style.visibility = 'visible';
+      gameOverEl.textContent.family = 'Bungee Spice';
       winOrLose.innerText = "YOU WIN";
+      manImage.style.visibility = "hidden";
       disableKeyboard(); 
       winSound.play() 
       confetti({
-        particleCount: 100, // Number of confetti pieces
-        spread: 70,        // Angle of spread
+        particleCount: 400, // Number of confetti pieces
+        spread: 100,        // Angle of spread
         origin: { x: 0.5, y: 0.3 }, // Start position
     });
     }

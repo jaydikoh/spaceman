@@ -15,6 +15,10 @@ display: flex;
 padding: 10px;
 }
 
+nav {
+    height: 10vh;
+}
+
 #left-container {
     width: 30%;
     padding: 10px;
@@ -26,7 +30,7 @@ padding: 10px;
 }
 
 #game-info {
-    height: 13vh;
+    height: 9vh;
     display: flex;
     justify-content: space-between;
     padding: 15px;
@@ -39,6 +43,7 @@ padding: 10px;
     font-family: 'Bungee Spice', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /* margin-left: 77px; */
     /* margin-top: 40px; */
+    animation: glow 1.5s infinite;
 }
 /* #game-info #game-hints {
     display: flex;
@@ -83,10 +88,11 @@ padding: 10px;
 h1 {
     text-align: center;
     /* color: white; */
-    font-size: 70px;
+    font-size: 80px;
     font-family: 'Bungee Spice', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px;
     margin: 0;
+    animation: glow 1.5s infinite;
 }
 
 #keyboard {
@@ -146,8 +152,6 @@ h1 {
     /* margin-left: 130px; */
     width: 60%;
     margin-left: 70px;
-    margin-top: 60px;
-
 }
 
 button:hover {
@@ -184,3 +188,14 @@ button:hover {
     font-size: 70px;
 }
 
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ffa500, 0 0 80px #ffa500, 0 0 90px #ffa500;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 40px #ff0, 0 0 80px #ff0, 0 0 100px #ff0, 0 0 120px #ffa500;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ffa500, 0 0 80px #ffa500, 0 0 90px #ffa500;
+    }
+}
