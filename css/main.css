@@ -1,13 +1,9 @@
 body {
     background-color: rgb(255, 255, 255);
-    /* height: 100vh; */
     width: 100vw;
     display: flex;
     flex-direction: column;
     background: url("../img/space background.png") center/cover no-repeat;
-    /* overflow: hidden;
-    word-break: keep-all; */
-    /* justify-content: space-between; */
 }  
 
 main {
@@ -37,38 +33,24 @@ nav {
 }
 
 #game-image {
-    /* border: 1px solid red; */
     height: 40vh;
-    /* font-size: 80px; */
     font-family: 'Bungee Spice', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* margin-left: 77px; */
-    /* margin-top: 40px; */
     animation: glow 1.5s infinite;
 }
-/* #game-info #game-hints {
-    display: flex;
-} */
 
 .keys {
     display: flex;
     gap: 1vmin;
-    /* margin-left: 170px; */
-    /* margin-right: 170px; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /* width: 300x;
-    height: 200px; */
 }
-
 
 .keyboard-buttons { 
     width: 55px;
     height: 45px;
     background: rgb(0, 136, 255);
-    /* border: 3px solid black; */
     border-radius: 10px;
-    /* font-weight: 400; */
     font-size: 20px;
     font-family: Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
@@ -79,7 +61,6 @@ nav {
     height: 50px;
     width: 120px;
     font-size: larger;
-    /* margin-top: 70px; */
     border-radius: 8px;
     margin-left: 130px;
     margin-top: 10px;
@@ -87,7 +68,6 @@ nav {
 
 h1 {
     text-align: center;
-    /* color: white; */
     font-size: 80px;
     font-family: 'Bungee Spice', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px;
@@ -98,10 +78,6 @@ h1 {
 #keyboard {
     width: 450px;
     margin-left: 60px;
-    /* border: 2px solid white; */
-    /* margin: auto; */
-    /* margin-bottom: 100px; */
-
 }
 
 #rocket {
@@ -122,8 +98,6 @@ h1 {
 
  .word {
       display: flex;
-      /* flex-direction: row; */
-      /* margin-top: 70px; */
 }
 
 .letter-word {
@@ -142,18 +116,18 @@ h1 {
 }
 
 .gameover {
-    /* text-align: center; */
+    display: flex;
+    justify-content: center;
     font-size: 30px;
-    /* margin-top: 50px; */
+    margin-top: 50px;
     color: rgb(255, 140, 0);
     font-weight: 600;
     font-family: Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
-    /* margin-left: 130px; */
     width: 60%;
     margin-left: 70px;
 }
-
+    
 button:hover {
     color: white;
     background-color: darkgrey;
@@ -163,8 +137,6 @@ button:hover {
   h3 {
     font-family: Georgia, Times, 'Times New Roman', serif;
     color: rgb(255, 140, 0);
-    /* font-style: italic; */
-    /* line-height: 0; */
     margin: 0;
     font-size: 25px;
   }
@@ -184,7 +156,7 @@ button:hover {
 
 .checkwinner {
     margin-left: 100px;
-    margin-top: 30px;
+    margin-top: 60px;
     font-size: 70px;
 }
 

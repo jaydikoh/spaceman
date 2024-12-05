@@ -1,7 +1,3 @@
-/*----- constants -----*/
-// import words from './data'
-// const words = require('./data.js')
-
 const images = [
     "img/spaceman-0.png",
     "img/spaceman-0.png",
@@ -24,6 +20,7 @@ let selectedWord = {};
 let guessedLetters = [];
 let remainingGuesses = 7;
 let keystroke
+let pressedKeys = [];
 
 /*----- cached elements  -----*/
 
@@ -37,7 +34,6 @@ const gameImageEl = document.getElementById("game-image"); // Select the game im
 const manImage = document.getElementById('spaceman');
 const body = document.querySelector('body');
 const winOrLose = document.querySelector('.checkwinner')
-// const youLose = document.getElementById("game-image");
 
 /*----- event listeners -----*/
 
@@ -46,33 +42,25 @@ keyboardButtons.forEach((button) => {
 });
 playAgainButton.addEventListener('click', init);
 
-// body.addEventListener('keydown', handleClick);
-
-// window.onload()
-//write a function that handles listening for keyboard events
-//the function should check if your keystroke is one of the 26 letters
-//call the funtion on window.onload
-
 /*----- functions -----*/
 
 // Initialize Game
 
 function init() {
-  // renderGame();
   selectedWord = words[Math.floor(Math.random() * words.length)];       //math.random pick a index number at random, math.floor makes it a whole number
-  guessedLetters = [];               //put the gussed letters in an Array
+  guessedLetters = [];   
+  pressedKeys = [];            //put the gussed letters in an Array
   remainingGuesses = 7;              // Hide game-over message
   gameOverEl.style.visibility = 'hidden';
   keyboardButtons.forEach((button) => {
-    button.disabled = false; // Re-enable all buttons
-    button.style.backgroundColor = ""; //reset button style
+    button.disabled = false;                                      // Re-enable all buttons
+    button.style.backgroundColor = "";                            //reset button style
   });
   hintEl.textContent = `HINT: ${selectedWord.hint}`;      //selects hint for chosen word
   livesEl.innerHTML= `Attempts left: <b>${remainingGuesses}`
   letterContainer.innerHTML = "";                           //Clear existing `letter-word` divs
-  manImage.src="img/spaceman-0.png";
+  manImage.src = "img/spaceman-0.png";
   manImage.style.visibility = "visible";
-  // gameImageEl.innerHTML = manImage;
   winOrLose.innerText = "";
   body.addEventListener('keydown', handleClick);
   wordsDisplay();                                       //renedr blank spaces
@@ -150,9 +138,9 @@ function init() {
     } else {
       guessedLetter = event.key.toLowerCase();
       if (!acceptedKeys.includes(guessedLetter)) return;
+      if (pressedKeys.includes(guessedLetter)) return;
+      
       keyboardButtons.forEach((button) => {
-        console.log(event)
-        console.log(keystroke)
         if (button.textContent.toLowerCase()===guessedLetter) {
           keystroke = button;
           keystroke.disabled = true;                       //Disables the button so the player cannot select the same letter again.  
@@ -160,19 +148,18 @@ function init() {
       })
     }
     
+    pressedKeys.push(guessedLetter);                       //add the key to the pressedKeys array
+
     if (selectedWord.word.includes(guessedLetter)) {
       guessedLetters.push(guessedLetter);              // Add correct guess to guessedLetters array
       if (event.type === "click") event.target.style.backgroundColor = "green"; // Indicate correct guess
-      console.log(keystroke)
       keystroke.style.backgroundColor= "green";
       correctSound.currentTime = 0;
       correctSound.play();
-      // manImage.visibility = hidden;
       updateWordDisplay(); 
     } else {
       remainingGuesses--;
       if (event.type === "click") event.target.style.backgroundColor = "grey"; // Indicate wrong guess
-      console.log(keystroke)
       keystroke.style.backgroundColor= "grey"
       manImage.src = images[7 - remainingGuesses]
       incorrectSound.currentTime = 0;
@@ -184,66 +171,3 @@ function init() {
   }
   
   init();
-  
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
-
-
- 
- 
- 
- /*----- constants -----*/
- //const words = ['student', 'teacher', 'person', 'ball', 'thing'];
- //const chosenWord = words[Math.floor(Math.random() * words.length)];
-
- /*----- state variables -----*/
-
- //let displayWord = Array(chosenWord.length).fill('_');
-//  let lives = 6;
-//  let a = document.getElementById('word').textContent 
-//  let buttons = document.querySelectorAll('.keyboard-buttons');
-//  a = displayWord.join(' ');
-
-  /*----- cached elements  -----*/
-
-//   document.getElementById('lives').textContent = `Wrong Guesses: ${lives}`;
-
-  /*----- event listeners -----*/
-  
-//   buttons.forEach(button => {
-    //   button.addEventListener("click", () => handleGuess(button.textContent.toLowerCase(), button));
-//   });
-
-  /*----- functions -----*/
-
-// init():
-  
-// handleGuess () {
-
-// }
-
-
-
-
-  // create an array with words
-  
-  //math.random pick a index number at random, math.floor makes it a whole number
-  // giving us a random word
-//   console.log(chosenWord);
-  // convert the chosen word to a string
-//   console.log(displayWord)
-// traack game state
-// the number of wrong guesses inside the element who id is lives = 6
-// add event listner to the buttons
-
-
