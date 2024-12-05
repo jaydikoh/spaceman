@@ -113,7 +113,7 @@ function init() {
       gameOverEl.style.visibility = 'visible';
       winOrLose.innerText = "YOU LOSE";
       disableKeyboard();   
-      loseSound.play()                                           //disables keyboard if game losses
+      loseSound.play();                                           //disables keyboard if game losses
     }
     else if (wordArray.every((letter, index) => letterDivs[index].textContent === letter)) {   //Uses every() to check if all letters in the word (wordArray) match the corresponding letters displayed in the letterDivs.
       gameOverEl.style.display = "block";
@@ -122,6 +122,11 @@ function init() {
       winOrLose.innerText = "YOU WIN";
       disableKeyboard(); 
       winSound.play() 
+      confetti({
+        particleCount: 100, // Number of confetti pieces
+        spread: 70,        // Angle of spread
+        origin: { x: 0.5, y: 0.3 }, // Start position
+    });
     }
   }
   
