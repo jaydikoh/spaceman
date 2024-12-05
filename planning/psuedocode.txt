@@ -2,7 +2,7 @@
 * CHOOSE a random word from the wordList (hiddenWord).
 * CREATE an array to store the guessed letters (guessedLetters).
 *  CREATE a variable to track incorrect guesses (incorrectGuesses = 0).
-* SET maximum allowed incorrect guesses (maxAttempts = 5).
+* SET maximum allowed incorrect guesses (maxAttempts = 7).
 * INITIALIZE a display word with underscores (displayWord = "_" repeated for each letter in hiddenWord).
 
 * WHILE incorrectGuesses < maxAttempts AND displayWord is not equal to hiddenWord:
@@ -23,6 +23,6 @@
 *  END WHILE
 
 *  IF displayWord equals hiddenWord:
-    a. DISPLAY "Congratulations! You saved the spaceman. The word was [hiddenWord]."
+    a. DISPLAY "YOU WIN! The word was [hiddenWord]."
 ELSE:
-    a. DISPLAY "Game over! The spaceman is lost in space. The word was [hiddenWord]."
+    a. DISPLAY "YOU LOSE. The word was [hiddenWord]."
