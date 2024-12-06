@@ -4,11 +4,11 @@ body {
     display: flex;
     flex-direction: column;
     background: url("../img/space background.png") center/cover no-repeat;
-}  
+}
 
 main {
-display: flex;
-padding: 10px;
+    display: flex;
+    padding: 10px;
 }
 
 nav {
@@ -46,7 +46,7 @@ nav {
     justify-content: center;
 }
 
-.keyboard-buttons { 
+.keyboard-buttons {
     width: 55px;
     height: 45px;
     background: rgb(0, 136, 255);
@@ -92,12 +92,12 @@ h1 {
     align-content: center;
 }
 
-.right{
+.right {
     margin-right: 50px;
 }
 
- .word {
-      display: flex;
+.word {
+    display: flex;
 }
 
 .letter-word {
@@ -115,7 +115,7 @@ h1 {
     font-family: Georgia, Times, 'Times New Roman', serif;
 }
 
-.gameover {
+.correct-word {
     display: flex;
     justify-content: center;
     font-size: 30px;
@@ -127,21 +127,21 @@ h1 {
     width: 60%;
     margin-left: 70px;
 }
-    
+
 button:hover {
     color: white;
     background-color: darkgrey;
     transform: skew(3deg) scale(1.2);
-  }
+}
 
-  h3 {
+h3 {
     font-family: Georgia, Times, 'Times New Roman', serif;
     color: rgb(255, 140, 0);
     margin: 0;
     font-size: 25px;
-  }
+}
 
-  #right {
+#right {
     width: 40%
 }
 
@@ -164,9 +164,11 @@ button:hover {
     0% {
         text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ffa500, 0 0 80px #ffa500, 0 0 90px #ffa500;
     }
+
     50% {
         text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 40px #ff0, 0 0 80px #ff0, 0 0 100px #ff0, 0 0 120px #ffa500;
     }
+
     100% {
         text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ffa500, 0 0 80px #ffa500, 0 0 90px #ffa500;
     }
