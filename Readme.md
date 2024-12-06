@@ -18,7 +18,6 @@
 - **HTML** - Structure of the game interface.
 - **CSS** - Styled using modern techniques for an engaging UI.
 - **JavaScript** - Game logic, animations, and interactivity.
-- **[Node.js](https://nodejs.org/en/)** - JS runtime
 - **[Canvas Confetti]** - Adds celebratory confetti effects for wins.
 
 ### How to play

@@ -122,7 +122,7 @@ function disableKeyboard() {
     button.disabled = true;
   });
 }
-
+ 
 function handleClick(event) {
   let guessedLetter;                                            //Retrieves the text content of the button clicked by the player.
   if (event.type === 'click') {                                 //Retrieves the text content of the button clicked by the player.

@@ -25,4 +25,4 @@
 *  IF displayWord equals hiddenWord:
     a. DISPLAY "YOU WIN! The word was [hiddenWord]."
 ELSE:
-    a. DISPLAY "YOU LOSE. The word was [hiddenWord]."
+    a. DISPLAY "YOU LOSE. The word was [hiddenWord]." 
