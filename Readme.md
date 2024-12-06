@@ -1,4 +1,4 @@
-# Spaceman Game
+# Spaceman
 
 
 #### By: Jason Ekwensi
